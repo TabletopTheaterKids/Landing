@@ -39,6 +39,7 @@ html, body {
 
 body{
   font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
+  background-color: black;
   background:url(240425_TTK_FB-banner_v1.jpg) no-repeat center/cover;
 
   
