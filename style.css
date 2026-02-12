@@ -93,7 +93,7 @@ August 2021 : ok on Chrome v92+, Firefox v90+, Edge v92+
 #parchment {
   position: absolute;
   display: flex;
-	width: 75%;
+	width: 85%;
   /* center page with absolute position */
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   margin: 2em 0;
@@ -182,7 +182,7 @@ padding: .25em 1em 1em .25em;
  	display: flex;
   flex-direction: column;
 	width: 100%;
-  height: auto;
+  /*height: auto;*/
 
   top: 50%; left: 50%; transform: translate(-50%, -60%);
   
