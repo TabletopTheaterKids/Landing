@@ -5,6 +5,24 @@
   src: url(https://cdn.statically.io/gh/EmmesCodes/Tipografias/dae9f5bb/MorrisInitials.ttf);
   }
 
+@font-face {
+  font-family: Souvenir;
+  font-weight: normal;
+  src: url(fonts/Souvenir/Souvenir-Light.otf) format('opentype');
+  }
+
+@font-face {
+  font-family: Souvenir;
+  font-weight: bold;
+  src: url(fonts/Souvenir/Souvenir-Medium.otf) format('opentype');
+  }
+
+  /*@font-face {
+  font-family: Souvenir;
+  font-weight: italic;
+  src: url(fonts/Souvenir/Souvenir-LightItalic.ttf) format('truetype');
+  }*/
+
 :root {
   --fontSize: calc((1vw + 1vh) * .75);
 }
@@ -22,12 +40,46 @@ html, body {
 body{
   font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
   background:url(240425_TTK_FB-banner_v1.jpg) no-repeat center/cover;
+
+  
+  display:flex;
+  flex-direction:column;
+  margin:0;
 }
 
 main {
+  
   position: relative;
   width: 100%;
-  height: auto;
+  flex: 1;
+  min-height:100vh;
+  padding-bottom:none !important;
+}
+
+.content {
+  display: flex;
+  flex:1;
+}
+
+.footer {
+background-color: black !important;
+
+
+
+  padding:.75rem 0;
+text-align:center;
+ font: .8em/2em Souvenir, sans-serif;
+ transform: translate(0, -50%) !important;
+}
+
+.footer a {
+  color:white;
+
+}
+
+.footer a:hover, .footer a:active {
+  color:darkgray;
+
 }
 
 /* WARNING ! This solution seems to not work on all navigators.
@@ -42,9 +94,9 @@ August 2021 : ok on Chrome v92+, Firefox v90+, Edge v92+
   display: flex;
 	width: 75%;
   /* center page with absolute position */
-  top: 0; left: 50%; transform: translate(-50%, 0);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
   margin: 2em 0;
-	padding: 4em 4em 0em 4em;
+	padding: 0em 2em;
 	box-shadow: 2px 3px 15px black, 0 0 125px #8f5922 inset;
 	background: #fffef0;
   /* v2.1 : borders effect with SVG : try to play with scale to change them */
@@ -70,24 +122,68 @@ main p {
   color: #7F3300;
   margin-top: .75em;
   text-align: justify;
+  
 }
 
-div p:not(:first-child)::first-letter {
+.modal-body strong {
+  font-weight: bold;
+}
+
+.modal-body p, .modal-body li, .modal-body table {
+  font-size: .9em;
+  color: black;
+  line-height: 1.5em;
+  font-family: 'Souvenir';
+}
+.modal-body h3 {
+margin-bottom: 0em !important;
+}
+
+.modal-body ul, .modal-body ol{
+  margin-top: 0em !important;
+  margin-bottom: 2em !important;
+}
+
+.modal-body table {
+  overflow-x: auto;
+  max-width: 85%;
+  margin: 1em auto;
+}
+
+.modal-body td, .modal-body th{
+ vertical-align: top;
+}
+
+.modal-body th {
+  padding: .25em;
+  border-bottom: 1px solid #7F3300;
+  
+}
+
+.modal-body td {
+padding: .25em 1em 1em .25em;
+}
+
+.modal-body a{
+  color: #7F3300;
+}
+
+/*div p:not(:first-child)::first-letter {
   float: left;
   font: 1.7em/1em Morris;
   /* a little relief for the first letter*/
-  text-shadow: 1px 1px 1px black;
+  /*text-shadow: 1px 1px 1px black;
   margin: 0 .5rem;
-}
+}*/
 
 #contain {
-  position: relative;
+  position: absolute;
  	display: flex;
   flex-direction: column;
 	width: 100%;
   height: auto;
-  margin: 0 auto;
-	padding: 4em 4em 0em 4em;
+
+  top: 50%; left: 50%; transform: translate(-50%, -60%);
   
 }
 
@@ -120,7 +216,7 @@ input {
 }
 
 img.logo {
-  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0px 0px 15px rgba(58, 36, 14, 0.65));
   height: auto;
   width: 75%;
   display: block;
@@ -137,6 +233,13 @@ img.logo {
 	color: saddlebrown;
 }
 
+h2.inkTitle {
+  font-size: 2em;
+
+}
+
+
+
 .btn {
   padding: .1em 2em !important;
   
@@ -146,10 +249,11 @@ img.logo {
 .btn-primary {
   font-family: Pirata One, sans-serif !important;
   font-size: 28px !important;
-  font-weight: bold;
+  font-weight: normal;
   color: goldenrod;
   border: none !important;
   border-radius: 0px !important;
+  letter-spacing: .025em;
 }
 .btn-primary {
   --r: .8em; /* control the cutout */
@@ -191,4 +295,9 @@ img.logo {
   text-align: right;
   color: black;
   font-size: 250%;
+}
+
+.copyright::before {
+  content: "\00A9";
+  margin-right: 0.25em;
 }
